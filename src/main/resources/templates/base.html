@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-komerce</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="home">
+<div class="min-vh-100">
+    <header th:replace="fragments :: header"></header>
+    <main>
+        <div class="container" th:replace="::content">
+
+
+        </div>
+    </main>
+</div>
+<div th:replace="fragments :: footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+<div id ="Categories">
+    <h1>Categories</h1>
+    <div class="">
+        <img src="" alt="Action">
+        <a href=""></a>
+
+    </div>
+
+    <div class="">
+        <img src="" alt="Aventure">
+        <a href=""></a>
+
+    </div>
+
+    <div class="">
+        <img src="" alt="FPS">
+        <a href=""></a>
+
+    </div>
+
+    <div class="">
+        <img src="" alt="RPG">
+        <a href=""></a>
+
+    </div>
+    <div class="">
+        <img src="" alt="Jeux solo">
+        <a href=""></a>
+
+    </div>
+    <div class="">
+        <img src="" alt="Arcane">
+        <a href=""></a>
+
+    </div>
+    <div class="">
+        <img src="" alt="Combat">
+        <a href=""></a>
+
+    </div>
+
+    <div class="">
+        <img src="" alt="Stratégie">
+        <a href=""></a>
+
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
