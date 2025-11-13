@@ -29,11 +29,12 @@ header nav ul {
     list-style: none;
 }
 
-header nav ul li a {
+header nav ul li a  {
     color: #f1f1f1;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s ease;
+    background-attachment: scroll;
 }
 
 header nav ul li a:hover {
@@ -57,11 +58,8 @@ header img:hover {
     justify-content: center;
     align-items: center;
     list-style: none;
-    gap: 60px;
+    gap: 50px;
     padding: 20px;
-    border-radius: 25px;
-    background: linear-gradient(130deg, #fff, #000);
-    margin: 30px 380px;
 }
 
 .div img {
@@ -78,7 +76,10 @@ header img:hover {
 .hero {
     position: relative;
     height: 100vh;
-    background: url("img/jjh.jpg") center center/cover no-repeat;
+    background-image: url("../img/jjh.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,9 +92,8 @@ header img:hover {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    padding: 0 20px;
     text-align: left;
-    margin: 70px 0px ;
+    padding: 60px;
 }
 
 /*  titre  */
@@ -212,18 +212,38 @@ footer ul li h2 {
     list-style: none;
 }
 
-.footer-section ul li {
+.footer-section nav ul li {
     margin: 8px 0;
+    display:  inline-block;
+    justify-content: center;
+    align-content:center ;
+    gap: 20px;
 }
 
 .footer-section ul li a {
     color: #e0e0e0;
     text-decoration: none;
     transition: 0.3s;
+    gap: 20px;
+
 }
 
 .footer-section ul li a:hover {
     color: #00b4d8;
+    border-bottom: 1px solid #00b4d8;
+}
+.footer-links ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.footer-links ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+    background-attachment: scroll;
 }
 
 /* Réseaux sociaux */
