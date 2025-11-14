@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
 <div th:fragment="footer" class="container">
@@ -17,10 +18,18 @@
                 <h3>Liens utiles</h3>
                 <nav>
                 <ul class="footer-links">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Boutique</a></li>
-                    <li><a href="#">Promotions</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <a href="index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#">Boutique</a>
+                    </li>
+                    <li>
+                        <a href="#">Promotions</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" target="_blank">Contact</a>
+                    </li>
                 </ul>
                 </nav>
             </div>
@@ -51,6 +60,9 @@
         </div>
     </footer>
 </div>
+
+
+
 <div th:fragment="header" class="container">
     <header class="header">
         <nav>
@@ -67,7 +79,7 @@
                     <a href="#Précommander">Précommander</a>
                 </li>
                 <li>
-                    <a href="#Prochaine sortie">Prochaine sortie</a>
+                    <a href="#Meilleur ventes">Meilleur ventes</a>
                 </li>
                 <li>
                     <a href="Support.html">Support 24/7</a>
@@ -75,37 +87,18 @@
 
                 </li>
                 <li>
-                    <a href="panier.html"></a>
-                    <img th:src="@{img/paniers.png}">
+                    <a href="panier.html" class="panier"></a>
+                    <img th:src="@{img/boutique.jpg}">
+                    <span>Boutique</span>
                 </li>
                 <li>
                     <a href="compte.html"></a>
-                    <img th:src="@{img/}">
+                    <img th:src="@{img/home.jpg}">
+                    <span>Compte</span>
                 </li>
             </ul>
         </nav>
-
     </header>
-
-    <div class="div">
-        <nav>
-            <ul>
-                <li>
-                    <a href="PC.html">PC</a>
-                </li>
-                <li>
-                    <a href="PlayStation.html">PlayStation</a>
-                </li>
-                <li>
-                    <a href="Xbox.html">Xbox</a>
-                </li>
-                <li>
-                    <a href="Nintendo.html">Nintendo</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
 </div>
 </body>
 </html>
