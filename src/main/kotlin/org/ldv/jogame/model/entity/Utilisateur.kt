@@ -1,15 +1,33 @@
 package org.ldv.jogame.model.entity
 
+import jakarta.persistence.*
+
+@Entity
+@Table(name = "utilisateurs")
 open class Utilisateur(
-    val idUtilisateur: Int,
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    var id: Int? = null,
+
+    @Column(nullable = false)
     var nom: String,
+
+    @Column(nullable = false)
     var prenom: String,
+
+    @Column(nullable = false, unique = true)
     var email: String,
+
+    @Column(nullable = false)
     var motDePasse: String,
-    var role: String
-) {
-    fun creerCompte() {}
-    fun seConnecter() {}
-    fun seDeconnecter() {}
-    fun modifierProfil() {}
-}
+
+    @Column(nullable = false)
+    var role: String = "client"
+)
+
+
+
+
+
+

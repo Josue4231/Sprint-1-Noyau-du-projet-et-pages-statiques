@@ -1,11 +1,30 @@
 package org.ldv.jogame.model.entity
+import jakarta.persistence.*
 
+@Entity
+@Table(name = "Avis")
 class Avis(
-    val idAvis: Int,
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    var idAvis: Int? = null,
+
+    @Column(nullable = false)
     var note: Int,
+
+    @Column(nullable = false, length = 1000)
     var commentaire: String,
-    val dateAvis: String
+
+    @Column(nullable = false)
+    var dateAvis: String
 ) {
-    fun ajouterAvis() {}
-    fun supprimerAvis() {}
+    @Transient
+    fun ajouterAvis() {
+        // Méthode non persistée
+    }
+
+    @Transient
+    fun supprimerAvis() {
+        // Méthode non persistée
+    }
 }

@@ -1,5 +1,11 @@
 package org.ldv.jogame.model.entity
 
+
+
+import jakarta.persistence.*
+
+@Entity
+@DiscriminatorValue("ADMIN")
 class Administrateur(
     idUtilisateur: Int,
     nom: String,
@@ -9,9 +15,29 @@ class Administrateur(
     role: String = "administrateur"
 ) : Utilisateur(idUtilisateur, nom, prenom, email, motDePasse, role) {
 
-    fun ajouterJeu() {}
-    fun modifierJeu() {}
-    fun supprimerJeu() {}
-    fun gererUtilisateurs() {}
-    fun consulterStatistiques() {}
+    @Transient
+    fun ajouterJeu() {
+        // logique non persistée
+    }
+
+    @Transient
+    fun modifierJeu() {
+        // logique non persistée
+    }
+
+    @Transient
+    fun supprimerJeu() {
+        // logique non persistée
+    }
+
+    @Transient
+    fun gererUtilisateurs() {
+        // logique non persistée
+    }
+
+    @Transient
+    fun consulterStatistiques() {
+        // logique non persistée
+    }
 }
+

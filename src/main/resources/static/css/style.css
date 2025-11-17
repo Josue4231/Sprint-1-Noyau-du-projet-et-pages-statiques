@@ -321,3 +321,22 @@ div[id] video:hover {
     }
 }
 
+.span {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 600;
+}
+.panier span {
+    color: #00b4d8;
+font-weight: bold;
+}
+.compte span {
+    color: #00b4d8;
+    font-weight: bold;
+}
+
+
+
+
+

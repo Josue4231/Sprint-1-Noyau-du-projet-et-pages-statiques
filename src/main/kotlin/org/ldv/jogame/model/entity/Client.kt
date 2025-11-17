@@ -1,16 +1,30 @@
 package org.ldv.jogame.model.entity
 
+import jakarta.persistence.*
+
+import jakarta.persistence.*
+
+@Entity
+@Table(name = "clients")
 class Client(
-    idUtilisateur: Int,
     nom: String,
     prenom: String,
     email: String,
     motDePasse: String,
     role: String = "client"
-) : Utilisateur(idUtilisateur, nom, prenom, email, motDePasse, role) {
+) : Utilisateur(null, nom, prenom, email, motDePasse, role) {
 
+    @Transient
     fun ajouterJeuPanier() {}
+
+    @Transient
     fun passerCommande() {}
+
+    @Transient
     fun payerCommande() {}
+
+    @Transient
     fun recevoirCle() {}
 }
+
+

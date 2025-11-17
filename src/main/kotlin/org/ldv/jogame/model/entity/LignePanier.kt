@@ -1,6 +1,28 @@
 package org.ldv.jogame.model.entity
 
+import jakarta.persistence.*
+
+@Entity
+@Table(name = "lignes_panier")
 class LignePanier(
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Int? = null,  // ID auto-généré
+
+    @Column(nullable = false)
     var quantite: Int,
-    var sousTotal: Float
+
+    @Column(nullable = false)
+    var sousTotal: Float,
+
+    // Optionnel : lien avec un jeu
+    @ManyToOne
+    @JoinColumn(name = "jeu_id")
+    var jeu: Jeux? = null,
+
+    // Optionnel : lien avec une commande
+    @ManyToOne
+    @JoinColumn(name = "commande_id")
+    var commande: Commande? = null
 )

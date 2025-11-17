@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class MainController (){
+class MainController () {
 
 
     /**
@@ -12,9 +12,27 @@ class MainController (){
      * @return le chemin vers le template a partir du dossier ressources/templates (on ne marque pas le .html)
      */
     @GetMapping("/Jogame")
-    fun home():String{
+    fun home(): String {
         return "index"
     }
 
+    @GetMapping("/Jogame/compte")
+    fun compte(): String {
+        return "compte"
+    }
 
+    @GetMapping("/Jogame/panier")
+    fun panier(): String {
+        return "panier"
+    }
+
+    @GetMapping("/Jogame/inscription")
+    fun inscription(): String {
+        return "inscription"
+    }
+    @GetMapping("/Jogame/index")
+    fun index(): String {
+        return "index"
+    }
 }
+
