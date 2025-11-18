@@ -1,0 +1,72 @@
+<!doctype html>
+<html th:replace="base :: html" lang="fr" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="content">
+    <main class="py-5">
+        <div class="container">
+            <h1 class="mb-5 text-center">Administration des categories</h1>
+
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Catégories</h1>
+                <a th:href="@{/Jogame/pageAdmin/Jeux/createjeux}" class="btn btn-success">+ Nouvelle catégorie</a>
+            </div>
+
+
+            <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Categorie</th>
+                    <th>Clé activation</th>
+                    <th>Video</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="unJeu : ${jeux}">
+                    <td th:text="${unJeu.id}"></td>
+                    <td th:text="${unJeu.titre}"></td>
+                    <td th:text="${unJeu.description}"></td>
+                    <td th:text="${unJeu.prix}"></td>
+                    <td th:text="${unJeu.categorie}"></td>
+                    <td th:text="${unJeu.cleActivation}"></td>
+
+                    <!-- Vidéo du jeu -->
+                    <td>
+                        <video width="200" height="120" controls th:if="${unJeu.videoGameplay}">
+                            <source th:src="@{/${unJeu.videoGameplay}}" type="video/mp4">
+                            Votre navigateur ne supporte pas la vidéo.
+                        </video>
+                    </td>
+
+                    <td>
+                        <a th:href="@{'/Jogame/pageadmin/Jeux/' + ${unJeu.id}}" class="btn btn-warning btn-sm me-2">Afficher</a>
+                        <a th:href="@{'/Jogame/pageadmin/Jeux/editjeux/' + ${unJeu.id}}" class="btn btn-warning btn-sm me-2">Modifier</a>
+                        <a th:href="@{'/Jogame/pageadmin/Jeux/delete/' + ${unJeu.id}}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Supprimer ce jeu ?');">Supprimer</a>
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+</div>
+
+<style>
+    table video {
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        max-width: 100%;
+        height: auto;
+    }
+
+</style>
+
+
+</html>
+
+

@@ -4,12 +4,17 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-@Table(name = "paniers")
+@DiscriminatorValue("PANIER")
+
 class Panier(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idPanier: Int? = null,  // ID auto-généré
+    var id: Int? = null,
+
+    @OneToMany(mappedBy = "panier", cascade = [CascadeType.ALL], orphanRemoval = true)
+    var lignePanier: MutableList<LignePanier> = mutableListOf(),
+
 
     @Column(nullable = false)
     var dateCreation: LocalDate,  // LocalDate préférable à String

@@ -1,13 +1,14 @@
 package org.ldv.jogame.model.entity
 import jakarta.persistence.*
+import java.time.LocalDate
 
 @Entity
-@Table(name = "Avis")
+@DiscriminatorValue("AVIS")
 class Avis(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    var idAvis: Int? = null,
+    var id: Int? = null,
 
     @Column(nullable = false)
     var note: Int,
@@ -16,7 +17,7 @@ class Avis(
     var commentaire: String,
 
     @Column(nullable = false)
-    var dateAvis: String
+    var dateAvis: LocalDate,
 ) {
     @Transient
     fun ajouterAvis() {

@@ -1,10 +1,12 @@
 package org.ldv.jogame.controller
 
+import org.ldv.jogame.model.dao.JeuxDAO
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class MainController () {
+class MainController (val jeuxDAO: JeuxDAO) {
 
 
     /**
@@ -34,5 +36,7 @@ class MainController () {
     fun index(): String {
         return "index"
     }
+
+
 }
 

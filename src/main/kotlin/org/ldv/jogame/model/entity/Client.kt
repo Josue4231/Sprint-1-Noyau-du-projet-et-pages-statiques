@@ -5,8 +5,9 @@ import jakarta.persistence.*
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "clients")
+@DiscriminatorValue("CLIENT")
 class Client(
+    id: Int? = null,
     nom: String,
     prenom: String,
     email: String,

@@ -4,13 +4,13 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-@Table(name = "commandes")
+@DiscriminatorValue("COMMANDE")
+
 class Commande(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idCommande: Int? = null, // doit être nullable pour JPA
-
+    var id: Int? = null,
     @Column(nullable = false)
     var dateCommande: LocalDate, // plus sûr que String pour manipuler les dates
 

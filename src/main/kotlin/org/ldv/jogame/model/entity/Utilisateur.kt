@@ -4,6 +4,8 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "utilisateurs")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type_utilisateur", discriminatorType = DiscriminatorType.STRING)
 open class Utilisateur(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

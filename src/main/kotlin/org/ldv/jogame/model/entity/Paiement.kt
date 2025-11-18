@@ -4,12 +4,13 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-@Table(name = "paiements")
+@DiscriminatorValue("PAIEMENT")
+
 class Paiement(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idPaiement: Int? = null, // ID auto-généré
+    var id: Int? = null,
 
     @Column(nullable = false)
     var methode: String,

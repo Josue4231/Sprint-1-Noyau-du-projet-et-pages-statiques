@@ -3,12 +3,13 @@ package org.ldv.jogame.model.entity
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "plateformes_externes")
+@DiscriminatorValue("PLATformeExterne")
+
 class PlateformeExterne(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idPlateforme: Int? = null,  // ID auto-généré
+    var id: Int? = null,
 
     @Column(nullable = false, unique = true)
     var nom: String,

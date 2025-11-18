@@ -1,9 +1,10 @@
-package org.ldv.ecommerce.model.service
+package org.ldv.jogame.service
 
 import org.ldv.jogame.model.dao.*
 import org.ldv.jogame.model.entity.*
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
+import java.time.LocalDate
 
 @Component
 class DataInitializer(
@@ -30,15 +31,15 @@ class DataInitializer(
 
         // === UTILISATEURS ===
         val client1 = Client(
-            idUtilisateur = null,
+            id = null,
             nom = "Durand",
             prenom = "Pierre",
             email = "durand@example.com",
-            motDePasse = "azerty123"
+            motDePasse = "Azerty123"
         )
 
         val admin = Administrateur(
-            idUtilisateur = null,
+            idutilisateur = null,
             nom = "Admin",
             prenom = "Jean",
             email = "admin@example.com",
@@ -49,42 +50,88 @@ class DataInitializer(
 
         // === JEUX ===
         val jeu1 = Jeux(
-            idJeu = null,
-            titre = "Super Jeu",
-            description = "Jeu d'aventure épique",
+            id = null,
+            titre = "Sekiro",
+            description = "Jeu aventure avec des monstres",
             prix = 59.99f,
             categorie = "Aventure",
             plateformeCompatible = "PC",
             cleActivation = "ABC123XYZ",
-            videoGameplay = "videos/super_jeu.mp4",
-            imageJeu = "images/super_jeu.jpg"
+            videoGameplay = "videos/sekiro.mp4",
+            imageJeu = "images/sekiro.jpg"
         )
 
+        val jeu2 = Jeux(
+            id = null,
+            titre = "Destiny 2",
+            description = "Jeu de guerre online ou solos",
+            prix = 40.00f,
+            categorie = "Action",
+            plateformeCompatible = "PC",
+            cleActivation = "DEF456GHI",
+            videoGameplay = "videos/destiny2.mp3",
+            imageJeu = "images/destiny.jpg"
+        )
+
+        val jeu3 = Jeux(
+            id = null,
+            titre = "Batman",
+            description = "Jeu combat avec des super mechants",
+            prix = 10.00f,
+            categorie = "Action",
+            plateformeCompatible = "STEAM",
+            cleActivation = "JKL789OPI",
+            videoGameplay = "videos/batman.mp3",
+            imageJeu = "img/batman.jpg"
+        )
+        val jeux = listOf(jeu1, jeu2, jeu3)
+
         jeuxDAO.save(jeu1)
+        jeuxDAO.save(jeu2)
+        jeuxDAO.save(jeu3)
+
 
         // === AVIS ===
         val avis1 = Avis(
-            idAvis = null,
+            id = null,
             note = 5,
             commentaire = "Excellent jeu !",
-            dateAvis = "2025-11-17"
+            dateAvis = LocalDate.parse("2025-11-17")
+        )
+        val avis2 = Avis(
+            id = null,
+            note = 4,
+            commentaire = "Très bon gameplay",
+            dateAvis = LocalDate.parse("2025-11-18")
         )
 
+        val avis3 = Avis(
+            id = null,
+            note = 3,
+            commentaire = "Pas mal mais quelques bugs",
+            dateAvis = LocalDate.parse("2025-11-19")
+        )
+
+
+
         avisDAO.save(avis1)
+        avisDAO.save(avis2)
+        avisDAO.save(avis3)
 
         // === PANIER ===
         val panier = Panier(
-            idPanier = null,
-            dateCreation = "2025-11-17",
-            total = 0f
+            id = null,
+            dateCreation = LocalDate.parse("2025-11-17"),
+            total = 0f,
+            client = client1
         )
 
         panierDAO.save(panier)
 
         // === COMMANDE ===
         val commande = Commande(
-            idCommande = null,
-            dateCommande = "2025-11-17",
+            id = null,
+            dateCommande = LocalDate.parse("2025-11-17"),
             montantTotal = 59.99f,
             statut = "EN_COURS"
         )

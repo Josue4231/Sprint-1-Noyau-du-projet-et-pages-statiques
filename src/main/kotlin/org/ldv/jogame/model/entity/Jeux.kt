@@ -3,12 +3,12 @@ package org.ldv.jogame.model.entity
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "jeux")
+
 class Jeux(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var idJeu: Int? = null,  // doit être nullable pour JPA
+    var id: Int? = null,
 
     @Column(nullable = false)
     var titre: String,

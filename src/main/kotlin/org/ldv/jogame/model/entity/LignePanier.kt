@@ -3,12 +3,17 @@ package org.ldv.jogame.model.entity
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "lignes_panier")
+@DiscriminatorValue("LIGNE_PANIER")
+
 class LignePanier(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null,  // ID auto-généré
+    var id: Int? = null,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "panier_id", nullable = false)
+    var panier: Panier? = null,
 
     @Column(nullable = false)
     var quantite: Int,
