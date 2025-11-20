@@ -3,8 +3,10 @@ package org.ldv.jogame.service
 import org.ldv.jogame.model.dao.*
 import org.ldv.jogame.model.entity.*
 import org.springframework.boot.CommandLineRunner
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 import java.time.LocalDate
+import javax.swing.text.PasswordView
 
 @Component
 class DataInitializer(
@@ -15,8 +17,10 @@ class DataInitializer(
     private val lignePanierDAO: LignePanierDAO,
     private val paiementDAO: PaiementDAO,
     private val panierDAO: PanierDAO,
+    private val roleDAO: RoleDAO,
     private val plateformeExterneDAO: PlateformeExterneDAO,
-    private val utilisateurDAO: UtilisateurDAO
+    private val utilisateurDAO: UtilisateurDAO,
+    private val passwordEncoder: PasswordEncoder
 ) : CommandLineRunner {
 
     override fun run(vararg args: String?) {
@@ -117,6 +121,18 @@ class DataInitializer(
         avisDAO.save(avis1)
         avisDAO.save(avis2)
         avisDAO.save(avis3)
+
+        //Role//
+        val roleAdmin = Role(
+            nom = "ADMIN"
+        )
+
+        val roleClient = Role(
+            nom = "CLIENT"
+        )
+
+        roleDAO.saveAll(listOf(roleAdmin, roleClient))
+
 
         // === PANIER ===
         val panier = Panier(

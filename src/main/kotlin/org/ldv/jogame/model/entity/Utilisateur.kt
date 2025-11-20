@@ -24,8 +24,10 @@ open class Utilisateur(
     @Column(nullable = false)
     var motDePasse: String,
 
-    @Column(nullable = false)
-    var role: String = "client"
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    var role: Role? = null
+
 )
 
 

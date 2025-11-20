@@ -15,4 +15,5 @@ class AdminController {
         // correspond à : templates/pageAdmin/dashboard.html
     }
 
+
 }

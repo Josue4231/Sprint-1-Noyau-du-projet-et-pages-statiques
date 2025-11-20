@@ -8,7 +8,9 @@
 
 <div th:fragment="content">
 
-  <section class="hero">
+
+
+    <section class="hero">
         <a href="#"></a>
 
         <div class="overlay"></div>
@@ -22,11 +24,12 @@
 
     <!--Tendance-->
     <div id ="Tendance">
-        <h1>Tendance >
-        <a href=""></a>
-        </h1>
+        <a href="/Jogame/tendance">
+            <h1>Tendance ></h1>
+        </a>
+
         <div class="">
-            <img src="#" alt="">
+            <img th:src="@{img/Ghostyotei.jpg}">
             <video muted loop preload="none">
                 <source src="videos/gta6-trailer.mp4" type="video/mp4">
             </video>
@@ -76,6 +79,7 @@
         </div>
 
     </div>
+
 
     <!--Autre footer des avantage du site-->
     <div>
